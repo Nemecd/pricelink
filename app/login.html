@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PriceLink | Log in</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main class="auth">
+  <div class="box">
+    <div class="logo-text">PriceLink</div>
+    <p class="lead">Your prices in one link. Orders straight to WhatsApp.</p>
+
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tabLogin" aria-selected="true" aria-controls="formLogin">Log in</button>
+      <button type="button" role="tab" id="tabSignup" aria-selected="false" aria-controls="formSignup">Create account</button>
+    </div>
+
+    <form id="formLogin" role="tabpanel" aria-labelledby="tabLogin" novalidate>
+      <div class="field"><label for="lEmail">Email</label><input id="lEmail" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="lPass">Password</label><input id="lPass" type="password" autocomplete="current-password" required></div>
+      <button class="btn wide" type="submit" id="lBtn">Log in</button>
+    </form>
+
+    <form id="formSignup" role="tabpanel" aria-labelledby="tabSignup" hidden novalidate>
+      <div class="field"><label for="sName">Shop name</label><input id="sName" type="text" maxlength="60" placeholder="Chioma Bags" autocomplete="organization" required></div>
+      <div class="field">
+        <label for="sSlug">Your link</label>
+        <div class="prefix">pricelink.ng/<input id="sSlug" type="text" maxlength="30" placeholder="chiomabags" autocapitalize="none" autocomplete="off" spellcheck="false" required></div>
+        <div class="hint" id="slugHint" aria-live="polite"></div>
+      </div>
+      <div class="field"><label for="sPhone">WhatsApp number for orders</label><input id="sPhone" type="tel" placeholder="0801 234 5678" autocomplete="tel" required></div>
+      <div class="field"><label for="sEmail">Email</label><input id="sEmail" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="sPass">Password (8 or more characters)</label><input id="sPass" type="password" autocomplete="new-password" minlength="8" required></div>
+      <button class="btn wide" type="submit" id="sBtn">Create my link</button>
+    </form>
+
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="common.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

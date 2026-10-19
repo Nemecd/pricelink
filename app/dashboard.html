@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PriceLink | Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand">PriceLink</div>
+    <a class="nv on" href="dashboard.html" aria-current="page">Products</a>
+    <a class="nv" id="viewPage" target="_blank" rel="noopener">My page</a>
+    <button class="nv" type="button" id="settingsBtn">Shop settings</button>
+    <button class="nv" type="button" id="logout">Log out</button>
+    <div class="plan" id="plan"></div>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="top">
+      <h1 id="shopName">Products</h1>
+      <div class="linkbar"><span id="linkText"></span><button class="btn" type="button" id="copyBtn">Copy link</button></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="sl">Views today</div><div class="sv" id="sViews">–</div></div>
+      <div class="stat"><div class="sl">WhatsApp taps today</div><div class="sv" id="sTaps">–</div></div>
+      <div class="stat"><div class="sl">Products live</div><div class="sv" id="sProducts">–</div></div>
+    </div>
+
+    <section class="panel">
+      <div class="phead"><h2>All products</h2><button class="btn" type="button" id="addBtn">Add product</button></div>
+      <div id="list"></div>
+    </section>
+  </main>
+</div>
+
+<dialog id="pm" aria-labelledby="pTitle">
+  <h2 id="pTitle">Add product</h2>
+  <form id="pf" novalidate>
+    <div class="field"><label for="pName">Product name</label><input id="pName" type="text" maxlength="120" required></div>
+    <div class="field"><label for="pPrice">Price (₦)</label><input id="pPrice" type="number" inputmode="decimal" min="0" step="any" required></div>
+    <div class="field"><label for="pCat">Category (optional)</label><input id="pCat" type="text" maxlength="40" list="cats" placeholder="Bags, Shoes…"><datalist id="cats"></datalist></div>
+    <div class="field">
+      <label for="pImg">Photo (optional)</label>
+      <img class="prev" id="pPrev" alt="Product photo preview" hidden>
+      <input id="pImg" type="file" accept="image/*">
+      <button class="btn danger" type="button" id="pRemove" hidden style="margin-top:8px">Remove photo</button>
+    </div>
+    <label class="check"><input id="pStock" type="checkbox" checked> In stock</label>
+    <div class="dacts"><button class="btn ghost" type="button" id="pCancel">Cancel</button><button class="btn" type="submit" id="pSave">Save</button></div>
+  </form>
+</dialog>
+
+<dialog id="sd" aria-labelledby="sTitle">
+  <h2 id="sTitle">Shop settings</h2>
+  <form id="sf" novalidate>
+    <div class="field"><label for="shName">Shop name</label><input id="shName" type="text" maxlength="60" required></div>
+    <div class="field"><label for="shTag">Tagline (optional)</label><input id="shTag" type="text" maxlength="80" placeholder="Bags &amp; shoes"></div>
+    <div class="field"><label for="shCity">City (optional)</label><input id="shCity" type="text" maxlength="40" placeholder="Lagos"></div>
+    <div class="field"><label for="shPhone">WhatsApp number for orders</label><input id="shPhone" type="tel" required></div>
+    <div class="dacts"><button class="btn ghost" type="button" id="shCancel">Cancel</button><button class="btn" type="submit" id="shSave">Save</button></div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="common.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

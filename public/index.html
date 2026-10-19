@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PriceLink</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="head">
+      <div class="wrap">
+        <div class="logo" id="logo" aria-hidden="true"></div>
+        <div>
+          <h1 id="biz">Loading…</h1>
+          <p class="sub" id="meta"></p>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="tools" id="tools" hidden>
+        <label for="q" style="position: absolute; left: -9999px"
+          >Search products</label
+        >
+        <input
+          id="q"
+          class="search"
+          type="search"
+          placeholder="Search products…"
+          autocomplete="off"
+        />
+        <div
+          class="chips"
+          id="chips"
+          role="group"
+          aria-label="Filter by category"
+        ></div>
+      </div>
+      <div class="grid" id="grid">
+        <div class="skel"></div>
+        <div class="skel"></div>
+        <div class="skel"></div>
+      </div>
+      <div class="msg" id="empty" hidden></div>
+    </main>
+
+    <div class="bar" id="bar" hidden>
+      <div class="wrap">
+        <a class="chat" id="chat" target="_blank" rel="noopener"
+          >Chat us on WhatsApp</a
+        >
+        <div class="mark" id="mark" hidden>
+          Made by <a href="https://pricelink.com.ng">PriceLink</a>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
