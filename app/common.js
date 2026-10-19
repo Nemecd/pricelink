@@ -2,7 +2,7 @@
 const CONFIG = {
   SUPABASE_URL: 'https://rxyvbqtrdntqueokcvsl.supabase.co',
   SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4eXZicXRyZG50cXVlb2tjdnNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIzMzk1NzUsImV4cCI6MjEwNzkxNTU3NX0.MO3x4nNzlnJ9laJ_u73j2KY05iSyMjzqj2vu2uYPil4',
-  PUBLIC_BASE_URL: 'https://pricelink.ng',   // your live domain
+  PUBLIC_BASE_URL: 'https://pricelink-ng.netlify.app',   // your live domain
   UPGRADE_WHATSAPP: '2349027829164'          // your WhatsApp number (digits only) for Pro upgrade requests
 };
 /* ======================================= */
